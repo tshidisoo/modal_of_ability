@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Can Do It! - Modal of Ability</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 I Can Do It! 🌟</h1>
+            <p class="subtitle">Learning about CAN and CAN'T</p>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="lesson">📚 Lesson</button>
+            <button class="tab-btn" data-tab="quiz">📝 Quiz</button>
+            <button class="tab-btn" data-tab="game">🎮 Game</button>
+        </nav>
+
+        <!-- LESSON SECTION -->
+        <section id="lesson" class="tab-content active">
+            <div class="lesson-box">
+                <h2>What does "CAN" mean? ✅</h2>
+                <p class="explanation">"CAN" means you are able to do something!</p>
+                
+                <div class="examples-grid">
+                    <div class="action-card" data-sound="I can run!">
+                        <div class="icon">🏃</div>
+                        <p>I can run!</p>
+                    </div>
+                    <div class="action-card" data-sound="I can jump!">
+                        <div class="icon">🦘</div>
+                        <p>I can jump!</p>
+                    </div>
+                    <div class="action-card" data-sound="I can dance!">
+                        <div class="icon">💃</div>
+                        <p>I can dance!</p>
+                    </div>
+                    <div class="action-card" data-sound="I can swim!">
+                        <div class="icon">🏊</div>
+                        <p>I can swim!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-box">
+                <h2>What does "CAN'T" mean? ❌</h2>
+                <p class="explanation">"CAN'T" (or CANNOT) means you are NOT able to do something!</p>
+                
+                <div class="examples-grid">
+                    <div class="action-card" data-sound="I can't fly!">
+                        <div class="icon">🚫✈️</div>
+                        <p>I can't fly!</p>
+                    </div>
+                    <div class="action-card" data-sound="I can't drive a car!">
+                        <div class="icon">🚫🚗</div>
+                        <p>I can't drive a car!</p>
+                    </div>
+                    <div class="action-card" data-sound="Fish can't walk!">
+                        <div class="icon">🐟🚫🚶</div>
+                        <p>Fish can't walk!</p>
+                    </div>
+                    <div class="action-card" data-sound="Cats can't bark!">
+                        <div class="icon">🐱🚫</div>
+                        <p>Cats can't bark!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lesson-box pattern-box">
+                <h2>📐 Sentence Pattern</h2>
+                <div class="pattern">
+                    <span class="pattern-part subject">Subject</span>
+                    <span class="pattern-plus">+</span>
+                    <span class="pattern-part can">can / can't</span>
+                    <span class="pattern-plus">+</span>
+                    <span class="pattern-part verb">verb</span>
+                </div>
+                <div class="pattern-examples">
+                    <p>✔️ <strong>I</strong> <em>can</em> <strong>sing</strong></p>
+                    <p>❌ <strong>Dogs</strong> <em>can't</em> <strong>talk</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz" class="tab-content">
+            <div class="quiz-container">
+                <h2>🧠 Test Your Knowledge!</h2>
+                <div id="quiz-progress">Question <span id="current-q">1</span> of <span id="total-q">5</span></div>
+                
+                <div id="quiz-question" class="quiz-question">
+                    <div class="question-icon">🏊</div>
+                    <p class="question-text">A fish ___ swim.</p>
+                    <div class="quiz-options">
+                        <button class="quiz-option">can</button>
+                        <button class="quiz-option">can't</button>
+                    </div>
+                </div>
+
+                <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+                <button id="next-question" class="btn-primary hidden">Next Question ➡️</button>
+                <div id="quiz-results" class="quiz-results hidden">
+                    <h3>🎉 Quiz Complete! 🎉</h3>
+                    <p class="score">Your Score: <span id="final-score">0</span>/5</p>
+                    <button id="restart-quiz" class="btn-primary">Try Again 🔄</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAME SECTION -->
+        <section id="game" class="tab-content">
+            <div class="game-container">
+                <h2>🎯 Can or Can't Challenge!</h2>
+                <p class="game-instructions">Drag each card to the correct box!</p>
+                
+                <div id="game-score" class="game-score">Score: <span id="score">0</span></div>
+
+                <div class="game-area">
+                    <div class="drop-zones">
+                        <div class="drop-zone" data-answer="can">
+                            <h3>✅ CAN</h3>
+                            <p>Things we ARE able to do</p>
+                        </div>
+                        <div class="drop-zone" data-answer="cant">
+                            <h3>❌ CAN'T</h3>
+                            <p>Things we are NOT able to do</p>
+                        </div>
+                    </div>
+
+                    <div class="drag-cards" id="drag-cards">
+                        <!-- Cards will be inserted by JS -->
+                    </div>
+                </div>
+
+                <button id="reset-game" class="btn-primary">New Game 🔄</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
